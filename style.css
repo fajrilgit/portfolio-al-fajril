@@ -1,0 +1,1328 @@
+/* =====================================================================
+   DAFTAR ISI CSS
+   1. Variabel & reset
+   2. Layout dasar, header & navigasi, tombol
+   3. Hero
+   4. Section umum (tentang, skill, proyek)
+   5. Galeri desain (carousel)
+   6. Timeline, kontak, footer, halaman detail, toast
+   7. Animasi reveal & media query dasar
+   8. Tema glass hitam-biru
+   9. Sertifikat & lightbox
+   10. Responsif & navbar mobile
+   ===================================================================== */
+
+
+/* ---------- 1. Variabel & reset ---------- */
+:root {
+  --bg: #020810;
+  --sf: #08202e;
+  --ln: rgba(56, 220, 240, .2);
+  --tx: #e6faff;
+  --mu: #8fb6c6;
+  --v: #12c8e8;
+  --c: #5ff0ff;
+  --gl: linear-gradient(160deg, rgba(60, 170, 200, .16), rgba(6, 22, 34, .4));
+  color-scheme: dark;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--tx);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c);
+  outline-offset: 3px;
+}
+
+
+/* ---------- 2. Layout dasar, header & navigasi, tombol ---------- */
+.w {
+  max-width: 1080px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ln);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.logo b {
+  color: var(--v);
+}
+
+nav ul {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  color: var(--mu);
+}
+
+nav ul a {
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: .2s;
+}
+
+nav ul a:hover,
+nav ul a.on {
+  color: var(--tx);
+  border-color: var(--v);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font: 500 14px 'Space Grotesk';
+  border: 1px solid var(--ln);
+  background: none;
+  color: var(--tx);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn:hover {
+  border-color: var(--c);
+  transform: translateY(-2px);
+}
+
+.btn.p {
+  background: linear-gradient(90deg, var(--v), var(--c));
+  color: #07101f;
+  border: 0;
+  font-weight: 700;
+}
+
+.btn.p:hover {
+  filter: brightness(1.1);
+}
+
+
+/* ---------- 3. Hero ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 40px;
+  align-items: center;
+  padding: 80px 0 70px;
+}
+
+.hi {
+  color: var(--c);
+  font-size: 14px;
+}
+
+h1 {
+  font-size: clamp(40px, 6.5vw, 68px);
+  line-height: 1.05;
+  margin: 10px 0 12px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+.hero h2 {
+  font-size: clamp(17px, 2.3vw, 21px);
+  font-weight: 500;
+  color: var(--v);
+}
+
+.hero p {
+  color: var(--mu);
+  max-width: 520px;
+  margin: 18px 0;
+}
+
+.type {
+  font-size: 15px;
+  min-height: 26px;
+  margin-bottom: 26px;
+}
+
+.type i {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: var(--c);
+  vertical-align: -2px;
+  animation: bl 1s steps(1) infinite;
+}
+
+@keyframes bl {
+  50% {
+    opacity: 0;
+  }
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.vis {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+}
+
+.photo {
+  width: 190px;
+  height: 190px;
+  border-radius: 28px;
+  border: 1px solid var(--ln);
+  background: linear-gradient(145deg, var(--sf), color-mix(in srgb, var(--v) 30%, var(--sf)));
+  display: grid;
+  place-items: center;
+  font-size: 56px;
+  font-weight: 700;
+  overflow: hidden;
+  color: var(--v);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: translateY(-50px);
+}
+
+.code {
+  width: 100%;
+  max-width: 330px;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 12px;
+  font-size: 12.5px;
+  line-height: 1.8;
+}
+
+.code .bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--ln);
+}
+
+.code .bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ln);
+}
+
+.code pre {
+  padding: 14px 16px;
+  font: inherit;
+  color: var(--mu);
+  overflow-x: auto;
+}
+
+.k {
+  color: var(--v);
+}
+
+.s {
+  color: var(--c);
+}
+
+
+/* ---------- 4. Section umum (tentang, skill, proyek) ---------- */
+section {
+  padding: 80px 0;
+}
+
+.alt {
+  background: color-mix(in srgb, var(--sf) 55%, var(--bg));
+}
+
+.t {
+  font-size: clamp(26px, 3.6vw, 34px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.sub {
+  color: var(--mu);
+  margin: 6px 0 36px;
+  max-width: 560px;
+}
+
+/* Tentang */
+.about {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+}
+
+.about p {
+  color: var(--mu);
+  margin-bottom: 14px;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 20px;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 12px;
+  padding: 24px;
+  align-content: start;
+  font-size: 14px;
+}
+
+dt {
+  color: var(--mu);
+}
+
+dd {
+  font-weight: 500;
+}
+
+/* Skill */
+.sk {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.sc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 26px 10px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--ln);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--sf) 80%, #fff), var(--sf) 45%, var(--bg));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 10px 24px rgba(0, 0, 0, .4);
+  transition: .25s;
+}
+
+.sc:hover {
+  transform: translateY(-4px);
+  border-color: var(--k);
+}
+
+.ico {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, .5));
+}
+
+.ico svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sc h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.sc .meter {
+  margin-top: 6px;
+}
+
+.sc em {
+  font-style: normal;
+  font-size: 11.5px;
+  color: var(--mu);
+}
+
+.card {
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 12px;
+  padding: 22px;
+  transition: .25s;
+}
+
+.card:hover {
+  border-color: var(--v);
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.it {
+  margin-bottom: 13px;
+  font-size: 13.5px;
+}
+
+.it div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.it em {
+  font-style: normal;
+  color: var(--mu);
+  font-size: 11.5px;
+}
+
+.meter {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ln);
+  overflow: hidden;
+}
+
+.meter i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--v), var(--c));
+  transition: width 1.1s ease;
+}
+
+.note {
+  font-size: 13px;
+  color: var(--mu);
+  margin-top: 20px;
+}
+
+/* Proyek */
+.pg {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.pj {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.th {
+  height: 150px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--v) 35%, var(--sf)), color-mix(in srgb, var(--c) 22%, var(--sf)));
+  padding: 22px 26px;
+}
+
+.mk {
+  height: 100%;
+  background: var(--bg);
+  border-radius: 8px 8px 0 0;
+  border: 1px solid var(--ln);
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 28% 1fr;
+  gap: 6px;
+}
+
+.mk b {
+  background: var(--ln);
+  border-radius: 3px;
+}
+
+.mk span {
+  display: grid;
+  gap: 6px;
+  grid-template-rows: 10px 1fr 1fr;
+}
+
+.mk span i {
+  background: color-mix(in srgb, var(--v) 40%, var(--ln));
+  border-radius: 3px;
+}
+
+.mk span i+i {
+  background: var(--ln);
+}
+
+.pj .b {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pj h3 {
+  font-size: 18px;
+}
+
+.pj p {
+  color: var(--mu);
+  font-size: 14px;
+  margin: 8px 0 14px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.tags span {
+  font: 11.5px 'JetBrains Mono';
+  padding: 3px 9px;
+  border: 1px solid var(--ln);
+  border-radius: 20px;
+  color: var(--c);
+}
+
+.pj .row {
+  margin-top: auto;
+}
+
+.pj .btn {
+  padding: 9px 16px;
+  font-size: 13px;
+}
+
+
+/* ---------- 5. Galeri desain (carousel) ---------- */
+.stg {
+  position: relative;
+  overflow: hidden;
+  padding: 14px 0 22px;
+  touch-action: pan-y;
+  user-select: none;
+  cursor: grab;
+  border-radius: 14px;
+}
+
+.stg:active {
+  cursor: grabbing;
+}
+
+.trk {
+  --w: 56;
+  position: relative;
+  height: 0;
+  padding-bottom: calc(var(--w) * .625%);
+}
+
+.sl {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(var(--w) * 1%);
+  aspect-ratio: 16/10;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--ln);
+  background: var(--sf);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .5);
+  transform: translateX(-50%) translateX(calc(var(--o) * 68%)) scale(var(--s));
+  opacity: var(--p);
+  z-index: var(--z);
+  transition: transform .5s cubic-bezier(.2, .8, .2, 1), opacity .5s;
+  cursor: pointer;
+}
+
+.sl.on {
+  cursor: default;
+  border-color: var(--v);
+}
+
+.sl img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.ph {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 16px;
+  font-size: 13px;
+  color: var(--mu);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--v) 30%, var(--sf)), color-mix(in srgb, var(--c) 18%, var(--sf)));
+}
+
+.ph b {
+  display: block;
+  color: var(--tx);
+  font-size: clamp(14px, 2.2vw, 19px);
+  margin-bottom: 4px;
+}
+
+.gc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.gc h3 {
+  font-size: 18px;
+}
+
+.gc span {
+  color: var(--c);
+  font: 12px 'JetBrains Mono', monospace;
+}
+
+.gn {
+  display: flex;
+  gap: 8px;
+}
+
+.gn button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--ln);
+  background: var(--sf);
+  color: var(--tx);
+  font-size: 20px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.gn button:hover {
+  border-color: var(--v);
+  transform: translateY(-2px);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  border: 0;
+  background: var(--ln);
+  cursor: pointer;
+  padding: 0;
+  transition: .3s;
+}
+
+.dots button.on {
+  background: var(--v);
+  width: 22px;
+}
+
+@media (max-width: 700px) {
+  .trk {
+    --w: 74;
+  }
+}
+
+
+/* ---------- 6. Timeline, kontak, footer, halaman detail, toast ---------- */
+.tl {
+  border-left: 2px solid var(--ln);
+  margin-left: 6px;
+}
+
+.ev {
+  position: relative;
+  padding: 0 0 30px 28px;
+}
+
+.ev::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--v);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.ev h3 {
+  font-size: 17px;
+}
+
+.ev small {
+  color: var(--c);
+  font-size: 12.5px;
+}
+
+.ev p {
+  color: var(--mu);
+  font-size: 14.5px;
+  max-width: 640px;
+  margin-top: 4px;
+}
+
+/* Kontak */
+.ct {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 44px;
+}
+
+.lk {
+  display: grid;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.lk a {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 10px;
+  font-size: 14px;
+  transition: .2s;
+}
+
+.lk a:hover {
+  border-color: var(--c);
+}
+
+.lk span {
+  color: var(--mu);
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  font-size: 13px;
+  color: var(--mu);
+  display: grid;
+  gap: 6px;
+}
+
+input,
+textarea {
+  font: inherit;
+  color: var(--tx);
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 8px;
+  padding: 11px 14px;
+  width: 100%;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: 0;
+  border-color: var(--v);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--ln);
+  padding: 36px 0;
+  text-align: center;
+  color: var(--mu);
+  font-size: 14px;
+}
+
+footer b {
+  display: block;
+  color: var(--tx);
+  font-size: 18px;
+}
+
+footer q {
+  display: block;
+  margin: 8px 0 16px;
+  quotes: none;
+}
+
+.soc {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.soc a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--ln);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font: 500 12px 'JetBrains Mono';
+  transition: .2s;
+}
+
+.soc a:hover {
+  border-color: var(--v);
+  color: var(--v);
+}
+
+/* Halaman detail proyek */
+.dt h2 {
+  font-size: 22px;
+  margin: 34px 0 8px;
+  color: var(--v);
+}
+
+.dt p,
+.dt li {
+  color: var(--mu);
+}
+
+.dt ul {
+  padding-left: 20px;
+}
+
+.dt .top {
+  padding: 56px 0 10px;
+}
+
+/* Toast */
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  transform: translate(-50%, 30px);
+  background: var(--sf);
+  border: 1px solid var(--v);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+  z-index: 20;
+  max-width: 90vw;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+
+/* ---------- 7. Animasi reveal & media query dasar ---------- */
+.rv {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: .7s;
+}
+
+.rv.in {
+  opacity: 1;
+  transform: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+
+  .hero,
+  .about,
+  .ct,
+  .pg {
+    grid-template-columns: 1fr;
+  }
+
+  .sk {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero {
+    padding-top: 44px;
+  }
+}
+
+@media (max-width: 540px) {
+  .sk {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .sc {
+    padding: 18px 4px 14px;
+  }
+
+  .sc h3 {
+    font-size: 12.5px;
+  }
+
+  .ico {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .rv {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* ---------- 8. Tema glass hitam-biru (glow) ---------- */
+body {
+  background:
+    radial-gradient(900px 520px at 88% 6%, rgba(0, 205, 235, .24), transparent 62%),
+    radial-gradient(700px 520px at 4% 38%, rgba(0, 110, 165, .2), transparent 62%),
+    radial-gradient(900px 520px at 62% 90%, rgba(0, 185, 215, .15), transparent 62%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+header,
+.card,
+.sc,
+.pj,
+dl,
+.code,
+.photo,
+.lk a,
+input,
+textarea,
+.gn button,
+.sl,
+.btn:not(.p),
+#toast,
+.hero,
+footer {
+  background: var(--gl);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .07),
+    0 0 26px rgba(20, 200, 230, .07),
+    0 12px 32px rgba(0, 0, 0, .45);
+}
+
+header {
+  background: rgba(2, 10, 18, .72);
+}
+
+.hero {
+  margin-top: 26px;
+  padding: 64px 44px;
+  border: 1px solid var(--ln);
+  border-radius: 22px;
+}
+
+.alt {
+  background: rgba(3, 20, 32, .4);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-block: 1px solid var(--ln);
+}
+
+.btn.p {
+  box-shadow: 0 0 22px rgba(18, 200, 232, .5);
+}
+
+.btn.p:hover {
+  box-shadow: 0 0 32px rgba(18, 200, 232, .75);
+}
+
+h1 {
+  text-shadow: 0 0 30px rgba(34, 211, 238, .4);
+}
+
+.card:hover,
+.sc:hover,
+.pj:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .1),
+    0 0 32px rgba(20, 200, 230, .28),
+    0 12px 32px rgba(0, 0, 0, .45);
+}
+
+.sl.on {
+  box-shadow: 0 0 44px rgba(20, 200, 230, .35), 0 16px 40px rgba(0, 0, 0, .55);
+}
+
+.meter i {
+  box-shadow: 0 0 8px var(--v);
+}
+
+.ev::before {
+  box-shadow: 0 0 0 4px var(--bg), 0 0 12px var(--v);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 40px 22px;
+  }
+}
+
+
+/* ---------- 9. Sertifikat & lightbox ---------- */
+.cf {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.cf button {
+  font: 500 13px 'Space Grotesk', sans-serif;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--ln);
+  background: var(--gl);
+  color: var(--mu);
+  cursor: pointer;
+  transition: .2s;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.cf button.on,
+.cf button:hover {
+  color: var(--tx);
+  border-color: var(--v);
+  box-shadow: 0 0 16px rgba(18, 200, 232, .3);
+}
+
+.cg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cr {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cth {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ln);
+}
+
+.cth img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cb {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.cb h4 {
+  font-size: 16px;
+}
+
+.cb p {
+  color: var(--mu);
+  font-size: 13.5px;
+}
+
+.bd {
+  align-self: flex-start;
+  font: 11.5px 'JetBrains Mono', monospace;
+  color: var(--c);
+  border: 1px solid var(--ln);
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.cb .row {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.cb .btn {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+#lb {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(1, 6, 12, .88);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+#lb img {
+  max-width: 100%;
+  max-height: 86vh;
+  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(20, 200, 230, .3);
+}
+
+#lbx {
+  position: absolute;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--ln);
+  background: var(--gl);
+  color: var(--tx);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .cg {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .cg {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- 10. Responsif & navbar mobile ---------- */
+html,
+body {
+  overflow-x: clip;
+}
+
+#menu {
+  position: relative;
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  nav ul {
+    gap: 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    scroll-padding-top: 122px;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+
+  nav {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 10px 0 0;
+    row-gap: 8px;
+  }
+
+  nav .btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  #menu {
+    display: flex;
+    order: 3;
+    flex: 0 0 100%;
+    gap: 8px;
+    margin: 0 -24px;
+    padding: 2px 24px 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  #menu li {
+    flex: none;
+  }
+
+  #menu a {
+    display: block;
+    padding: 8px 15px;
+    border: 1px solid var(--ln);
+    border-radius: 20px;
+    font-size: 13.5px;
+    white-space: nowrap;
+    background: rgba(10, 40, 58, .35);
+  }
+
+  #menu a.on {
+    color: var(--tx);
+    border-color: var(--v);
+    background: rgba(18, 200, 232, .16);
+    box-shadow: 0 0 14px rgba(18, 200, 232, .3);
+  }
+
+  section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .w {
+    padding: 0 16px;
+  }
+
+  #menu {
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero {
+    margin-top: 14px;
+    padding: 28px 18px;
+    border-radius: 18px;
+    gap: 26px;
+  }
+
+  .hero p {
+    margin: 14px 0;
+  }
+
+  .type {
+    min-height: 46px;
+    font-size: 13px;
+  }
+
+  .row .btn {
+    flex: 1 1 140px;
+    justify-content: center;
+  }
+
+  .photo {
+    width: 150px;
+    height: 150px;
+    font-size: 44px;
+  }
+
+  dl {
+    grid-template-columns: 1fr;
+    gap: 2px 0;
+    padding: 18px;
+  }
+
+  dl dt {
+    margin-top: 10px;
+    font-size: 12.5px;
+  }
+
+  dl dt:first-child {
+    margin-top: 0;
+  }
+
+  .ev {
+    padding-left: 22px;
+  }
+
+  .pj .b,
+  .cb {
+    padding: 16px;
+  }
+
+  input,
+  textarea {
+    font-size: 16px;
+  }
+
+  .gc {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .gc>div:first-child {
+    width: 100%;
+  }
+
+  .dt .top {
+    padding-top: 32px;
+  }
+
+  footer {
+    padding: 28px 0 36px;
+  }
+}

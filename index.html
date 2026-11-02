@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Al Fajril – Junior Web Developer | Teknik Informatika UMPAR</title>
+  <meta name="description" content="Portofolio Al Fajril, mahasiswa Teknik Informatika Universitas Muhammadiyah Parepare. Web development, PHP, CodeIgniter, MySQL, dan IoT.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Al Fajril – Junior Web Developer">
+  <meta property="og:description" content="Mahasiswa Teknik Informatika UMPAR yang membangun solusi digital melalui web dan teknologi.">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#020810">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1020'/%3E%3Ctext x='32' y='42' font-size='28' font-family='monospace' font-weight='700' text-anchor='middle' fill='%238b7cff'%3EAF%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============================== HEADER ============================== -->
+  <header>
+    <div class="w">
+      <nav aria-label="Navigasi utama">
+        <a class="logo mono" href="#home"><b>&lt;</b>alfajril<b>/&gt;</b></a>
+        <ul id="menu">
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#skills">Skill</a></li>
+          <li><a href="#projects">Proyek</a></li>
+          <li><a href="#designs">Desain</a></li>
+          <li><a href="#education">Pendidikan</a></li>
+          <li><a href="#experience">Pengalaman</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <a class="btn p" href="#contact">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================== HALAMAN UTAMA =========================== -->
+  <div id="main">
+    <main>
+
+      <!-- Hero -->
+      <div class="w hero" id="home">
+        <div>
+          <p class="hi mono" style="margin:0">Halo, saya</p>
+          <h1>Al Fajril</h1>
+          <h2>Informatics Engineering Student | Junior Web Developer</h2>
+          <p>Saya adalah mahasiswa Teknik Informatika Universitas Muhammadiyah Parepare yang memiliki ketertarikan pada pengembangan website, pemrograman, database, dan teknologi informasi. Saya senang mempelajari teknologi baru serta membangun solusi digital yang bermanfaat melalui proyek akademik maupun proyek pribadi.</p>
+          <div class="type mono" aria-live="off"><span id="ty"></span><i></i></div>
+          <div class="row">
+            <a class="btn p" href="#projects">Explore My Projects</a>
+            <a class="btn" href="#" id="cv">Download CV</a>
+            <a class="btn" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <div class="vis">
+          <div class="photo" id="photo" role="img" aria-label="Foto profil Al Fajril">AF</div>
+          <div class="code mono">
+            <div class="bar"><i></i><i></i><i></i></div>
+            <pre><span class="k">&lt;?php</span>
+$dev = [
+  <span class="s">'name'</span>   =&gt; <span class="s">'Al Fajril'</span>,
+  <span class="s">'campus'</span> =&gt; <span class="s">'UMPAR'</span>,
+  <span class="s">'stack'</span>  =&gt; [<span class="s">'PHP'</span>,<span class="s">'MySQL'</span>,<span class="s">'JS'</span>],
+  <span class="s">'learning'</span> =&gt; <span class="k">true</span>,
+];</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tentang -->
+      <section class="alt" id="about">
+        <div class="w rv">
+          <h2 class="t">Tentang saya</h2>
+          <p class="sub">Sedikit cerita tentang apa yang saya pelajari dan kerjakan.</p>
+          <div class="about">
+            <div>
+              <p>Saya merupakan mahasiswa Teknik Informatika yang tertarik pada dunia pengembangan perangkat lunak dan teknologi web. Selama menempuh pendidikan, saya terus mengembangkan kemampuan dalam pemrograman, pengelolaan database, perancangan sistem, dan pengembangan aplikasi berbasis web.</p>
+              <p>Saya memiliki semangat untuk belajar, mencoba teknologi baru, serta meningkatkan kemampuan melalui proyek nyata dan pengalaman kolaborasi.</p>
+            </div>
+            <dl>
+              <dt>Nama</dt><dd>Al Fajril</dd>
+              <dt>Pendidikan</dt><dd>Teknik Informatika</dd>
+              <dt>Universitas</dt><dd>Universitas Muhammadiyah Parepare</dd>
+              <dt>Status</dt><dd>Mahasiswa</dd>
+              <dt>Fokus</dt><dd>Web, Design &amp; Software Development</dd>
+              <dt>Lokasi</dt><dd>Indonesia</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skill -->
+      <section id="skills">
+        <div class="w rv">
+          <h2 class="t">Technical skills</h2>
+          <p class="sub">Kemampuan yang sedang saya kembangkan lewat kuliah dan proyek.</p>
+          <div class="sk" id="sk"></div>
+          <p class="note">Label menunjukkan perkiraan tingkat belajar saat ini, bukan klaim penguasaan mahir.</p>
+        </div>
+      </section>
+
+      <!-- Proyek -->
+      <section class="alt" id="projects">
+        <div class="w rv">
+          <h2 class="t">Featured projects</h2>
+          <p class="sub">Proyek akademik dan pribadi. Klik “View Details” untuk studi kasus.</p>
+          <div class="pg" id="pg"></div>
+        </div>
+      </section>
+
+      <!-- Desain -->
+      <section id="designs">
+        <div class="w rv">
+          <h2 class="t">Desain grafis &amp; UI</h2>
+          <p class="sub">Karya desain saya di Figma dan Canva. Geser, klik desain di samping, atau pakai panah untuk melihat berikutnya.</p>
+          <div class="gal">
+            <div class="stg" id="stg" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Galeri desain">
+              <div class="trk" id="trk"></div>
+            </div>
+            <div class="gc">
+              <div>
+                <h3 id="gt"></h3>
+                <span id="gk"></span>
+              </div>
+              <div class="gn">
+                <button id="gp" aria-label="Desain sebelumnya">‹</button>
+                <button id="gx" aria-label="Desain berikutnya">›</button>
+              </div>
+            </div>
+            <div class="dots" id="dots"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pendidikan -->
+      <section id="education">
+        <div class="w rv">
+          <h2 class="t">Pendidikan</h2>
+          <p class="sub">Jalur akademik saya saat ini.</p>
+          <div class="tl">
+            <div class="ev">
+              <small class="mono">Mahasiswa aktif</small>
+              <h3>Universitas Muhammadiyah Parepare (UMPAR)</h3>
+              <p>Program Studi Teknik Informatika. Fokus belajar pada pemrograman, sistem informasi, pengembangan perangkat lunak, database, dan teknologi informasi.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pengalaman & sertifikat -->
+      <section class="alt" id="experience">
+        <div class="w rv">
+          <h2 class="t">Pengalaman &amp; kegiatan</h2>
+          <p class="sub">Pengalaman akademik dan kegiatan. Lengkapi periode dan detailnya sesuai kondisi sebenarnya.</p>
+          <div class="tl">
+            <div class="ev">
+              <small class="mono">Akademik</small>
+              <h3>Proyek akademik</h3>
+              <p>Mengerjakan LMS, CRUD data mahasiswa, dan proyek IoT sebagai bagian dari perkuliahan.</p>
+            </div>
+            <div class="ev">
+              <small class="mono">Kuliah Kerja Nyata (KKN)</small>
+              <h3>Pengembangan website desa</h3>
+              <p>Terlibat dalam pengembangan website informasi desa (SIDesa) untuk menampilkan profil dan potensi desa.</p>
+            </div>
+            <div class="ev">
+              <small class="mono">Organisasi &amp; kampus</small>
+              <h3>Kegiatan organisasi</h3>
+              <p>[Isi nama organisasi, peran, dan periode jika ada.]</p>
+            </div>
+            <div class="ev">
+              <small class="mono">Kolaborasi</small>
+              <h3>Kerja tim dan penyelesaian proyek</h3>
+              <p>Belajar berbagi tugas, memakai Git/GitHub, dan menyelesaikan proyek bersama tepat waktu.</p>
+            </div>
+          </div>
+
+          <div id="certs" style="margin-top:56px">
+            <h3 class="t" style="font-size:24px">Sertifikat &amp; pelatihan</h3>
+            <p class="sub" style="margin-bottom:22px">Sertifikat, kursus, dan pelatihan yang saya ikuti.</p>
+            <div class="cf" id="cf">
+              <button class="on" data-f="">Semua</button>
+              <button data-f="Sertifikat">Sertifikat</button>
+              <button data-f="Pelatihan">Pelatihan</button>
+            </div>
+            <div class="cg" id="cg"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontak -->
+      <section id="contact">
+        <div class="w rv">
+          <h2 class="t">Contact</h2>
+          <p class="sub">Terbuka untuk magang, kerja, dan program seperti Maganghub.</p>
+          <div class="ct">
+            <div class="lk" id="lk"></div>
+            <form id="f">
+              <label>Name<input name="n" required autocomplete="name"></label>
+              <label>Email<input name="e" type="email" required autocomplete="email"></label>
+              <label>Subject<input name="s" required></label>
+              <label>Message<textarea name="m" required></textarea></label>
+              <div><button class="btn p" type="submit">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ====================== HALAMAN DETAIL PROYEK ====================== -->
+  <div id="detail" class="dt" hidden>
+    <div class="w">
+      <div class="top"><a class="btn" href="#projects">← Kembali ke proyek</a></div>
+      <article id="dc"></article>
+    </div>
+  </div>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer>
+    <div class="w">
+      <b>Al Fajril</b>Informatics Engineering Student
+      <q>Building digital solutions through technology and creativity.</q>
+      <div class="soc" id="soc"></div>
+      <small>© <span id="yr"></span> Al Fajril. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Lightbox sertifikat & toast -->
+  <div id="lb" hidden role="dialog" aria-modal="true" aria-label="Pratinjau sertifikat">
+    <button id="lbx" aria-label="Tutup">×</button>
+    <img id="lbi" alt="">
+  </div>
+  <div id="toast" role="status"></div>
+
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
