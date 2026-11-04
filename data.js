@@ -140,11 +140,32 @@ var PJ = [
 
 /* Galeri desain: isi src dengan gambar (data URI) hasil desain Anda */
 var DS = [
-  { t: "Desain UI Aplikasi",         tool: "Figma", src: "" },
-  { t: "Poster Kegiatan",            tool: "Canva", src: "" },
-  { t: "Desain Landing Page",        tool: "Figma", src: "" },
-  { t: "Banner Media Sosial",        tool: "Canva", src: "" },
-  { t: "Prototipe Aplikasi Mobile",  tool: "Figma", src: "" }
+  {
+    t: "Desain UI Aplikasi Musik",
+    tool: "Figma",
+    src: "images/desain-music-app.jpg"
+  },
+  {
+    t: "Poster Kegiatan",
+    tool: "Canva",
+    src: ""
+  },
+  {
+    t: "Desain Landing Page",
+    tool: "Figma",
+    src: ""
+  },
+  {
+    t: "Banner Media Sosial",
+    tool: "Canva",
+    src: ""
+  },
+  {
+    t: "Prototipe Aplikasi Mobile",
+    tool: "Figma",
+    src: ""
+  }
+
 ];
 
 /* Sertifikat & pelatihan
